@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-export function Character(){
-    const [allCharacters, setAllCharacters] = useState([]);
+export function useCharacter(){
+    const [allCharac, setAllCharac] = useState([]);
 
-    const getAllCharacters = () => {
+    const getAllCharacter = () => {
         return fetch ('https://rickandmortyapi.com/api/character')
         .then(response => response.json())
-        .then((data) => setAllCharacters(data,results));
+        .then((data) => setAllCharac(data.results));
     };
 
     return {
-        getAllCharacters,
-        allCharacters,
+        getAllCharacter,
+        allCharac,
     };
 
 }                                                                       

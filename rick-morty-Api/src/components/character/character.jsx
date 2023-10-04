@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import "./character.css";
+import { useCharacter } from "../../hooks/useCharacter";
 
 export function Character() {
-  const [character, setCharacter] = useState([]);
-
-  //useEffect y useState Hooks
+  const {allCharac, getAllCharacter} = useCharacter();
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((response) => response.json())
-      .then((data) => setCharacter(data.results));
-  }, [setCharacter]);
-  //useEffect recibe una funcion callback, es decir el codigo al ejecutar
-  //recibe cuando se va a ejecutar
+    getAllCharacter();
+  }, []);
   return (
+    <div>
+    <div className="boton">
+     <button>Docs</button> 
+     <button>About</button>
+     <button>SUPPORT US</button>
+     </div>
+    <div id="titulo">
+    <h1> The Rinck and Morty api</h1>
+    </div>
     <ul className="contenedor">
-      {character.map((item, index) => (
+      {allCharac.map((item, index) => (
         <li key={index}>
           <div>
             <img src={item.image} alt="" />
@@ -28,5 +32,8 @@ export function Character() {
         </li>
       ))}
     </ul>
+    </div>
+
   );
+
 }
