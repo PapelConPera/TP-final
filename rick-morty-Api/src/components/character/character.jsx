@@ -9,7 +9,7 @@ export function Character() {
     getAllCharacter();
   }, []);
   return (
-    <div>
+    <div className ="fondo">
     <div className="boton">
      <button>Docs</button> 
      <button>About</button>
@@ -24,7 +24,7 @@ export function Character() {
           <div>
             <img src={item.image} alt="" />
           </div>
-          <div>
+          <div className = "color">
             <h3>{item.name}</h3>
             <p>{item.status}</p>
             <p>{item.origin.name}</p>

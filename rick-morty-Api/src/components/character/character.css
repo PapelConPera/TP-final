@@ -2,9 +2,37 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
+    list-style: none;
+    background-color:rgb(102, 109, 206);
   }
 #titulo {
   display: flex;
   justify-content: center;
-  color:black;
+  flex-direction: row; 
+  padding: 1em; 
+  padding-top: 5em;
+  
+ 
 }
+.boton
+{
+  display: flex;
+  justify-content:flex-end;
+  color: black;
+  height: 2em;
+  margin-top: 2em;
+}
+.fondo{
+  padding: 1em; 
+  padding-top: 5em;
+  background-color:rgb(255, 255, 255);
+}
+
+.color{
+    margin-left: 1em;
+}
+
+
+
+
+
